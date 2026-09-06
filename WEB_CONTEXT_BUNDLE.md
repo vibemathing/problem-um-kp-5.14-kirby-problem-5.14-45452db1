@@ -74,7 +74,27 @@ This file is generated from repository truth and bounded for the web channel. It
       "web_status": "active"
     }
   ],
-  "attempts": [],
+  "attempts": [
+    {
+      "artifacts": [],
+      "attempt_id": "attempt:um-kp-5.14-kirby-problem-5.14-45452db1-source-fidelity-01",
+      "claims": [],
+      "completed_at": null,
+      "generator": "trusted-rolling-source-admission-v1",
+      "inputs": [
+        "problem-library/records/canonical-problems.jsonl",
+        "https://www.unsolvedmath.com/problems/KP-5.14"
+      ],
+      "lifecycle": "planned",
+      "method": "discovery",
+      "objective": "Close the source-fidelity obligation before attempting the frozen root statement.",
+      "obligation_graph_id": "graph:um-kp-5.14-kirby-problem-5.14-45452db1-v1",
+      "problem_contract_sha256": "6b3b58caac7857bcb975f43a209c4e39b5d288e88ba87a5755433c6600a46ea0",
+      "problem_id": "problem:um-kp-5.14-kirby-problem-5.14-45452db1",
+      "route_id": "route:um-kp-5.14-kirby-problem-5.14-45452db1-source-fidelity",
+      "started_at": "2026-09-06T08:00:00Z"
+    }
+  ],
   "failed_routes": [],
   "knowledge_operators": [
     {
@@ -203,77 +223,123 @@ This file is generated from repository truth and bounded for the web channel. It
       "source_id": "sagemath"
     }
   ],
-  "obligation_graphs": [],
+  "obligation_graphs": [
+    {
+      "attempt_id": "attempt:um-kp-5.14-kirby-problem-5.14-45452db1-source-fidelity-01",
+      "graph_id": "graph:um-kp-5.14-kirby-problem-5.14-45452db1-v1",
+      "obligations": [
+        {
+          "dependencies": [
+            "obligation:um-kp-5.14-kirby-problem-5.14-45452db1-statement-fidelity"
+          ],
+          "kind": "root_claim",
+          "obligation_id": "obligation:um-kp-5.14-kirby-problem-5.14-45452db1-root",
+          "statement": {
+            "formal_declaration": null,
+            "language": "en",
+            "text": "Does there exist a 1-cusped finite-volume hyperbolic $n$-manifold for any $n\\geq 5$?"
+          },
+          "statement_sha256": "6233fa5a926165d8d2eb152bd313740418d70a74bd92053575a60530edf8e65b"
+        },
+        {
+          "dependencies": [],
+          "kind": "definition",
+          "obligation_id": "obligation:um-kp-5.14-kirby-problem-5.14-45452db1-statement-fidelity",
+          "statement": {
+            "formal_declaration": null,
+            "language": "en",
+            "text": "Verify against the cited source that the frozen statement is complete, current, untruncated, attribution-correct, and unambiguous enough for mathematical research; record any definition or quantifier gap without silently editing the contract."
+          },
+          "statement_sha256": "65f0b3d574bd6d837403149dab6434c0f571709f7eb5bb066c7e8774bad13f34"
+        }
+      ],
+      "root_obligation_id": "obligation:um-kp-5.14-kirby-problem-5.14-45452db1-root",
+      "route_id": "route:um-kp-5.14-kirby-problem-5.14-45452db1-source-fidelity"
+    }
+  ],
   "problem_contract": {
     "acceptance": {
       "policy": "solution-admission-v1"
     },
-    "aliases": [],
+    "aliases": [
+      "UnsolvedMath KP-5.14"
+    ],
     "allowed_axioms": [
-      "none"
+      "classical-mathematics",
+      "source-explicit-definitions-only"
     ],
     "assumptions": [
-      "This record must never be treated as an active research problem."
+      "No assumptions beyond those explicitly present in the exact source statement are admitted.",
+      "Statement-faithfulness and current-status review must close before the root mathematical obligation can close."
     ],
     "constraints": {
       "allowed_adapters": [
-        "template-validation-v1"
+        "source-fidelity-review-v1",
+        "lean-obligation-v1"
       ],
       "allowed_methods": [
-        "discovery"
+        "discovery",
+        "derivation",
+        "computation",
+        "proof",
+        "formalization"
       ],
-      "max_attempts": 1,
+      "max_attempts": 20,
       "runtime": {
-        "max_output_bytes": 65536,
-        "max_retries": 1,
-        "max_transitions": 10,
-        "timeout_seconds": 60
+        "max_output_bytes": 5242880,
+        "max_retries": 3,
+        "max_transitions": 300,
+        "timeout_seconds": 1800
       }
     },
-    "created_at": "2026-09-06T00:00:00Z",
+    "created_at": "2026-09-06T08:00:00Z",
     "definitions": [
       {
-        "definition": "A non-admitted draft record used only to validate the physical public repository template.",
-        "term": "template placeholder"
+        "definition": "Use the statement, notation, terminology, and quantifier scope exactly as given by the cited source record. No unstated normalization or strengthening is admitted; ambiguity blocks Result admission until a versioned ProblemContract update.",
+        "term": "source-native interpretation"
       }
     ],
     "domain": {
-      "description": "Template-only placeholder domain; not a mathematical research question.",
+      "description": "Source-native Topology problem. Mathematical objects and notation are exactly those explicitly present in the frozen source statement.",
       "objects": [
-        "template-placeholder"
+        "objects and notation explicitly named in the frozen source statement"
       ]
     },
-    "lifecycle": "draft",
+    "lifecycle": "active",
     "msc": [
-      "00A00"
+      "54-01"
     ],
-    "problem_id": "problem:template-placeholder",
+    "problem_id": "problem:um-kp-5.14-kirby-problem-5.14-45452db1",
     "quantifiers": [
       {
-        "domain": "a reviewed public canonical ProblemContract supplied by the repository builder",
-        "kind": "find",
-        "variables": [
-          "replacement_problem"
-        ]
+        "domain": "truth of the exact frozen source statement under its explicit quantifiers",
+        "kind": "decide",
+        "variables": []
       }
     ],
     "schema_version": "1.0.0",
     "sources": [
       {
-        "retrieved_at": "2026-09-06T00:00:00Z",
-        "source": "Vibe Mathing public Web Harness",
-        "source_record_id": "public-template-placeholder-v1",
-        "url": "https://github.com/vibemathing/vibe-mathing-problem-public-template"
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath dataset contributors (CC BY 4.0)",
+        "source_record_id": "unsolvedmath-kp-5.14-061ed4803f46",
+        "url": "https://www.unsolvedmath.com/problems/KP-5.14"
+      },
+      {
+        "retrieved_at": "2026-09-02T00:06:43Z",
+        "source": "UnsolvedMath dataset license",
+        "source_record_id": null,
+        "url": "https://creativecommons.org/licenses/by/4.0/"
       }
     ],
     "statement": {
       "language": "en",
-      "text": "This is a non-research placeholder. Replace it with exactly one reviewed public ProblemContract before creating a public problem repository.",
+      "text": "Does there exist a 1-cusped finite-volume hyperbolic $n$-manifold for any $n\\geq 5$?",
       "version": 1
     },
-    "title": "Vibe Mathing public problem repository template placeholder",
-    "updated_at": "2026-09-06T00:00:00Z"
+    "title": "Kirby Problem 5.14",
+    "updated_at": "2026-09-06T08:00:00Z"
   },
-  "problem_contract_sha256": "e64cd03254e03dd661eade23243c3c21793fc2d8bffa2d33c172cf8ed2e7f940"
+  "problem_contract_sha256": "6b3b58caac7857bcb975f43a209c4e39b5d288e88ba87a5755433c6600a46ea0"
 }
 ```
